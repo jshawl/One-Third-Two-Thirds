@@ -26,6 +26,8 @@
         <td><%= check_box_tag(:complete) %>
           <%= label_tag(:complete, "Complete") %></td>
         <td><%= check_box_tag(:incomplete) %><%= label_tag(:incomplete, "Incomplete") %></td>
+	<!-- consider making incomplete the default -->
+	<!-- check out http://mrkris.com/2015/02/08/setting-default-values-in-active-record/ -->
         <td><button id="hideButton">Show/Hide</button>
         <td><%= link_to "Edit", edit_project_subtask_path(@project, subtask) %></td>
         <td><%= link_to "Delete", project_subtask_path(@project, subtask), method: :delete, data: {confirm: "Are you sure you want to delete this?"} %></td>
@@ -40,6 +42,22 @@
 <% end %>
 <%= link_to "Back", projects_path %>
 <button id="hideTimer">Show/Hide Timer</button>
+<!-- love the timer feature!
+
+Here's how I'd get this persisting on the page.
+
+When user clicks start, 
+
+localStorage.setItem("timerStart", JSON.stringify(new Date()))
+
+When the page loads, check if localstorage has that value
+
+localStorage.getItem("timerStart")..
+
+and then start the timer from there.
+
+-->
+
 <div class="sidebar">
   <div id="timer">Stop Watch</div>
     <div class="controls">

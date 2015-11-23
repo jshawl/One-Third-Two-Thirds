@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20151117162228) do
     t.text     "text"
     t.integer  "hoursleft"
     t.integer  "minutesleft"
-    t.string   "author"
+    t.string   "author" # how is this different from user_id?
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"

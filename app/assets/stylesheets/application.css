@@ -58,7 +58,7 @@ h2 {
 	padding:6px; border: rgba(0,0,0,1) 1px solid;
 }
 
-.subs tr:nth-child(odd){
+.subs tr:nth-child(odd){ /* nice! */
 	background: rgba(0,0,0,0);
 }
 

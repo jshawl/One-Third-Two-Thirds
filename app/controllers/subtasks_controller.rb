@@ -8,6 +8,7 @@ class SubtasksController < ApplicationController
 
   def create
     @project = Project.find(params[:project_id])
+    # you can use a before_action to set the @project instance variable
     @subtask = @project.subtasks.create!(subtask_params)
     redirect_to project_path(@project)
   end

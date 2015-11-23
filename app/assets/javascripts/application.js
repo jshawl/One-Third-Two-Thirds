@@ -41,16 +41,18 @@
 //     });
 //   }
 // });
+// remove unused code
 
 $(document).ready(function(){
     $( "#hideButton" ).click(function() {
     $('.createdAt, .createdAtHeader').toggle("slow", function(){
+    // you can omit the callback and just $().toggle("slow")
 
     });
   });
 });
 
-$(document).ready(function(){
+$(document).ready(function(){ // only need 1 document.ready
     $( "#hideTimer" ).click(function() {
     $('.sidebar').toggle("slow", function(){
 

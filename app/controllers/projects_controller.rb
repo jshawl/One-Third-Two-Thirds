@@ -32,6 +32,7 @@ class ProjectsController < ApplicationController
       total += task.subminutes
     end
     @total_hours = "#{total/60} hours and #{total%60} minutes"
+    # could move lines 28 - 34 to a model method. check out app/models/project
   end
 
 
@@ -52,6 +53,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id])
+    # can you think of a way to restrict deletions to the person who created the project?
     @project.destroy
     redirect_to projects_path
   end
